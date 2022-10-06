@@ -121,7 +121,7 @@ section {
   display: inline-block;
   width: 100%;
   text-align: center;
-  font-size: 17px;
+  font-size: 18px;
   color: #000;
   border: 0;
   background-color: transparent;
@@ -149,6 +149,53 @@ section {
   display: block;
   width: 40%;
 }
+
+.visual-left {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  text-align: left;
+}
+.visual-left span {
+  display: block;
+  width: 100%;
+  font-size: 30px;
+  color: #add8e6;
+}
+.visual-left h2 {
+  display: block;
+  width: 100%;
+  font-size: 60px;
+  font-weight: 500;
+}
+.visual-left p {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.visual-bt {
+  width: 50%;
+  line-height: 55px;
+  height: 50px;
+  font-size: 22px;
+  background-color: #add8e6;
+  text-align: center;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 5px 1px 5px rgb(0 0 0 / 8%);
+  transition: all 0.5s;
+  color: #fff;
+  border: 1px solid rgba(173, 216, 230, 0);
+  min-width: 200px;
+}
+.visual-bt:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #add8e6;
+  box-shadow: 5px 1px 5px rgb(0 0 0 / 30%);
+}
 .visual-right {
   position: relative;
   display: block;
@@ -162,65 +209,17 @@ section {
   transform: translate(-50%, -50%);
   box-shadow: 5px 1px 5px rgb(0 0 0 / 8%);
   transition: all 0.5s;
+  width: 100%;
 }
 .visual-right:hover img {
   box-shadow: 5px 1px 5px rgb(0 0 0 / 10%);
 }
-.visual-left {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  text-align: left;
-}
-.visual-left span {
-  display: block;
-  width: 60%;
-  font-size: 20px;
-  color: #add8e6;
-}
-.visual-left h2 {
-  display: block;
-  width: 60%;
-  font-size: 40px;
-  font-weight: 500;
-}
-.visual-left p {
-  display: block;
-  width: 60%;
-  font-size: 12px;
-  margin-bottom: 30px;
-}
-.visual-bt {
-  width: 50%;
-  line-height: 45px;
-  height: 40px;
-  font-size: 22px;
-  background-color: #add8e6;
-  text-align: center;
-  border-radius: 30px;
-  cursor: pointer;
-  box-shadow: 5px 1px 5px rgb(0 0 0 / 8%);
-  transition: all 0.5s;
-  color: #fff;
-  border: 1px solid rgba(173, 216, 230, 0);
-}
-.visual-bt:hover {
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #add8e6;
-  box-shadow: 5px 1px 5px rgb(0 0 0 / 30%);
-}
-.visual-right img {
-  width: 100%;
-}
+
 /* about */
 .about {
   margin-bottom: 0px;
 }
-.about .inner h2 {
-  margin-bottom: 50px;
-}
+
 
 .about-wrap {
   display: flex;
@@ -229,24 +228,32 @@ section {
 
 .about-left {
   width: 45%;
-  padding: 5% 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.about-left h2 {
+  width: 100%;
+  padding-bottom: 70px;
 }
 
 .about-left > p {
   width: 100%;
-  height: 50%;
   font-size: 22px;
   margin-bottom: 50px;
 }
 
 .about-left ul {
-  height: 50%;
+  width: 100%;
 }
 
 .about-title {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 600;
   color: lightskyblue;
+  display: inline-block;
+  width: 20%;
 }
 
 .about-desc {
@@ -304,6 +311,14 @@ section {
   display: block;
   margin: 0 auto;
 }
+.skill-list-img :nth-child(1) img{
+  width: 50px;
+  height: 60px;
+}
+.skill-list-img :nth-child(2) img{
+  width: 50px;
+  height: 60px;
+}
 /* project */
 .project {
   margin-bottom: 0;
@@ -315,23 +330,35 @@ section {
   display: block;
   font-size: 0;
   margin-bottom: 100px;
+  box-shadow: 2px 1px 5px rgb(0 0 0 / 0);
+  transition: box-shadow 0.5s;
+  padding: 1%;
 }
-
+.project-list > li:hover{
+  box-shadow: 2px 1px 5px rgb(0 0 0 / 30%);
+}
 .project-desc {
-  width: 35%;
+  width: 40%;
   display: inline-block;
-  padding: 3%;
+  padding: 2%;
 }
 .project-desc h4 {
-  font-size: 23px;
-  color: rgb(180, 180, 180);
+  font-size: 30px;
   margin-bottom: 10px;
+  text-align: center;
+  color: #8dcbe0;
 }
-.project-desc span {
+.project-desc h4 span{
+  font-size: 20px;
+  color: rgb(180, 180, 180);
+  margin-left: 5px;
+}
+.project-desc > span {
   display: block;
   font-size: 20px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   color: rgb(180, 180, 180);
+  text-align: center;
 }
 .project-desc span i {
   font-size: 20px;
@@ -340,7 +367,7 @@ section {
 .project-desc p {
   font-size: 19px;
   color: #b4b4b4;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 .project-link {
   height: 40%;
@@ -353,6 +380,15 @@ section {
   margin-bottom: 30px;
   text-align: center;
   height: 30px;
+  white-space: nowrap;
+}
+.project-link li:nth-child(4){
+  width: 35%;
+  margin-left: 10%;
+}
+.project-link li:nth-child(5){
+  width: 35%;
+  margin-right: 10%;
 }
 .project-link li a {
   display: block;
@@ -381,12 +417,12 @@ section {
   box-shadow: 2px 1px 5px rgb(0 0 0 / 16%);
 }
 .project-list li:nth-child(odd) .project-img {
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 .project-list li:nth-child(even) .project-img {
   margin: 0;
-  margin-right: 10%;
+  margin-right: 5%;
 }
 .project-img img {
   width: 100%;
@@ -457,9 +493,10 @@ section {
   height: 7%;
 }
 .life-desc p {
-  font-size: 16px;
+  font-size: 22px;
   color: #000;
   text-align: center;
+  line-height: 35px;
 }
 /* vision */
 .vision{
@@ -487,14 +524,15 @@ section {
 .vision-desc > div{
   width: 100%;
   height: 30%;
-  padding: 3%;
+  padding: 3% 10%;
   background-color: rgba(180, 180, 180, 0.2);
   border-radius: 30px;
   box-shadow: 3px 1px 5px rgb(0 0 0 / 13%);
 }
 .vision-desc > div h4{
   font-size: 25px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   text-align: center;
 }
 .vision-desc > div p{
@@ -516,7 +554,8 @@ section {
 }
 .footer .inner h2{
   font-size: 40px;
-  display: block;
+  text-align: center;
+  margin-bottom: 30px;
 }
 .contact-list{
   width: 50%;
@@ -528,7 +567,7 @@ section {
 }
 .contact-list > li{
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 30px;
 }
 .contact-list > li:last-child{
   margin-right: 0;
