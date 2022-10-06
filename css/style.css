@@ -416,6 +416,18 @@ section {
   box-shadow: 2px 1px 5px rgb(0 0 0 / 8%);
   transition: all 0.5s;
 }
+.life-list li:nth-child(1){
+  transform: rotate(6deg);
+}
+.life-list li:nth-child(3){
+  transform: rotate(-6deg);
+}
+.life-list li:nth-child(4){
+  transform: rotate(-6deg);
+}
+.life-list li:nth-child(6){
+  transform: rotate(6deg);
+}
 .life-list li:hover {
   box-shadow: 2px 1px 5px rgb(0 0 0 / 30%);
 }
