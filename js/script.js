@@ -37,6 +37,15 @@ window.onload = function(){
       })
     })
   })
+  const project = $('.project');
+  const visualBt = $('.visual-bt');
+  visualBt.click(() => {
+    
+    scrollTo({
+      top : project.offset().top-70,
+      behavior: "smooth"
+    })
+  })
   const gotop = $('.gotop');
   gotop.click(function(){
     scrollTo({
