@@ -298,7 +298,7 @@ section {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
-  height: 350px;
+  height: 250px;
 }
 
 .skill-list li {
