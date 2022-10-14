@@ -298,7 +298,7 @@ section {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
-  height: 250px;
+  height: 400px;
 }
 
 .skill-list li {
@@ -318,6 +318,7 @@ section {
     height: 100%;
     font-size: 16px;
     padding: 5% 0;
+    word-break:keep-all
 }
 .skill-list-img {
   width: 30%;
@@ -391,6 +392,7 @@ section {
   font-size: 19px;
   color: #b4b4b4;
   margin-bottom: 40px;
+  word-break:keep-all;
 }
 .project-desc{
   width: 100%;
@@ -575,6 +577,7 @@ section {
 .vision-desc > div p{
   font-size: 17px;
   line-height: 25px;
+  word-break:keep-all;
 }
 .vision-img{
   width: 57%;
