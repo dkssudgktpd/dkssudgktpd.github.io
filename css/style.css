@@ -11,6 +11,7 @@
   padding: 0;
   box-sizing: border-box;
   color: #000;
+  word-break:keep-all;
 }
 
 ul,
@@ -89,6 +90,62 @@ section {
   padding-bottom: 100px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
+@media all and (max-width:1200px){
+  .wrap{
+    padding: 0 20px;
+  }
+}
+/* mobile */
+.mb-wrap{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9998;
+}
+.mb-content{
+  position: absolute;
+  right: 0;
+  top: 70px;
+  display: block;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  transition: right 0.5s;
+}
+.mb-gnb{
+  height: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.mb-gnb > li{
+  width: 100%;
+  height: 70px;
+}
+.mb-content h3{
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 80px;
+}
+.mb-contact{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.mb-contact li{}
+.mb-contact li a{}
+.mb-contact li a i{
+  font-size: 30px;
+  color: #aaa;
+  transition: color 0.5s;
+}
+.mb-contact li a:hover i{
+  color: #000;
+}
 /* header */
 .header {
   position: fixed;
@@ -103,9 +160,6 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-.logo a {
-  display: block;
 }
 .gnb {
   width: 40%;
@@ -133,6 +187,64 @@ section {
 }
 .section-bt:hover {
   color: #add8e6;
+}
+.mb-bt{
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.mb-bt::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background-color:rgba(0, 0, 0, 0.7);
+
+}
+.mb-bt::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 35%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background-color:rgba(0, 0, 0, 0.7);
+}
+.mb-bt.active::before{
+  top: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  transition: transform 0.5s
+}
+.mb-bt.active::after{
+  top: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  transition: transform 0.5s;
+}
+@media all and (max-width:800px){
+  .header .inner{
+    display: block;
+    text-align: center;
+  }
+  .header .inner a{
+  display: inline-block;
+  }
+  .gnb{
+    display: none;
+  }
+  .mb-bt{
+    display: block;
+  }
 }
 /* visual */
 .visual {
@@ -318,7 +430,7 @@ section {
     height: 100%;
     font-size: 16px;
     padding: 5% 0;
-    word-break:keep-all
+    word-break:keep-all;
 }
 .skill-list-img {
   width: 30%;
