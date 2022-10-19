@@ -90,15 +90,13 @@ section {
   padding-bottom: 100px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
-@media all and (max-width: 1200px) {
-  .wrap {
-    padding: 0 20px;
-  }
-}
+
 @media all and (max-width: 800px) {
-  section{
+  section {
     margin-bottom: 12.5vw;
     padding-bottom: 12.5vw;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 }
 /* mobile */
@@ -583,22 +581,22 @@ section {
   width: 50px;
   height: 60px;
 }
-@media all and (max-width: 800px){
+@media all and (max-width: 800px) {
   .skill h2 {
     margin-bottom: 4vw;
     text-align: center;
-}
-.skill-list {
+  }
+  .skill-list {
     height: 600px;
     padding: 0 5vw;
     margin-bottom: 4vw;
-}
+  }
   .skill-list li {
     width: 47%;
-}
-.skill-list li p{
-  font-size: 2vw;
-}
+  }
+  .skill-list li p {
+    font-size: 2vw;
+  }
   .skill-list-img img {
     width: 6.25vw;
     height: 6.25vw;
@@ -608,15 +606,16 @@ section {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-}
-.skill-list li:nth-child(1) img, .skill-list li:nth-child(2) img {
+  }
+  .skill-list li:nth-child(1) img,
+  .skill-list li:nth-child(2) img {
     height: 7.5vw;
+  }
 }
-}
-@media all and (max-width: 600px){
-  .skill-list li p{
-  font-size: 2.5vw;
-}
+@media all and (max-width: 600px) {
+  .skill-list li p {
+    font-size: 2.7vw;
+  }
 }
 /* project */
 .project {
@@ -633,6 +632,9 @@ section {
   transition: box-shadow 0.5s;
   padding: 1%;
 }
+.project-list > li > .mb-title {
+  display: none;
+}
 .project-list > li:hover {
   box-shadow: 2px 1px 5px rgb(0 0 0 / 30%);
 }
@@ -641,17 +643,20 @@ section {
   display: inline-block;
   padding: 2%;
 }
-.project-title h4 {
+.project-title h4,
+.mb-title h4 {
   font-size: 30px;
   margin-bottom: 10px;
   text-align: center;
   color: #8dcbe0;
 }
+.mb-title h4 span,
 .project-title h4 span {
   font-size: 20px;
   color: rgb(180, 180, 180);
   margin-left: 5px;
 }
+.mb-title > span,
 .project-title > span {
   display: block;
   font-size: 20px;
@@ -659,6 +664,7 @@ section {
   color: rgb(180, 180, 180);
   text-align: center;
 }
+.mb-title > span i,
 .project-title > span i {
   font-size: 20px;
   color: rgb(180, 180, 180);
@@ -736,7 +742,47 @@ section {
 .project-img img {
   width: 100%;
 }
-
+@media all and (max-width: 800px) {
+  .project h2 {
+    margin-bottom: 6.5vw;
+    text-align: center;
+  }
+  .project-list > li {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 13vw;
+    box-shadow: 2px 1px 5px rgb(0 0 0 / 30%);
+  }
+  .project-list > li:last-child {
+    margin: 0;
+  }
+  .project-list > li > .mb-title {
+    width: 100%;
+    display: block;
+    order: 1;
+    margin-top: 2.5vw;
+  }
+  .mb-title > span {
+    margin-bottom: 5vw;
+  }
+  .project-title > h4,
+  .project-title > span {
+    display: none;
+  }
+  .project-title {
+    width: 100%;
+    order: 3;
+    margin-top: 5vw;
+  }
+  .project-list > li > .project-img {
+    width: 100%;
+    margin: 0 !important;
+    order: 2;
+  }
+  .project-title p {
+    margin-bottom: 5vw;
+  }
+}
 /* life */
 .life {
   background-color: rgba(180, 180, 180, 0.1);
@@ -802,13 +848,17 @@ section {
 }
 .life-desc {
   width: 100%;
-  height: 7%;
 }
 .life-desc p {
   font-size: 22px;
   color: #000;
   text-align: center;
   line-height: 35px;
+}
+@media all and (max-width:800px){
+  .life-list li{
+    height: 62.5vw;
+  }
 }
 /* vision */
 .vision {
