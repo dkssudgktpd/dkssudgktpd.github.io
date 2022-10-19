@@ -257,17 +257,12 @@ section {
 }
 
 .visual-left {
-  position: relative;
-  display: block;
-  width: 40%;
-}
-
-.visual-left {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
   text-align: left;
+  width: 40%;
 }
 .visual-left span {
   display: block;
@@ -326,7 +321,30 @@ section {
 .visual-right:hover img {
   box-shadow: 5px 1px 5px rgb(0 0 0 / 10%);
 }
-
+@media all and (max-width:800px){
+  .visual{
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+  }
+  .visual-left {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+}
+  .visual-right{
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.5;
+  }
+  .visual-right img{
+    width: 100%;
+  }
+}
 /* about */
 .about {
   margin-bottom: 0px;

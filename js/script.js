@@ -15,7 +15,7 @@ window.onload = function () {
     }
   });
   mbWrap.click(function () {
-    mbWrap.hide();
+    mbWrap.fadein();
     mbBt.removeClass("active");
   });
   mbCon.click(function (e) {
