@@ -9,14 +9,18 @@ window.onload = function () {
     if (mbBt.hasClass("active")) {
       mbWrap.show();
       $("html").css("overflow", "hidden");
+      mbCon.addClass("active");
     } else {
       mbWrap.hide();
       $("html").css("overflow", "auto");
+      mbCon.removeClass("active");
     }
   });
   mbWrap.click(function () {
-    mbWrap.fadein();
+    mbWrap.hide();
     mbBt.removeClass("active");
+    mbCon.removeClass("active");
+    $("html").css("overflow", "auto");
   });
   mbCon.click(function (e) {
     e.stopPropagation();
