@@ -4,23 +4,27 @@ window.onload = function () {
   const mbBt = $(".mb-bt");
   const mbWrap = $(".mb-wrap");
   const mbCon = $(".mb-content");
+  function mbshow() {
+    mbBt.addClass("active");
+    mbCon.addClass("active");
+    mbWrap.fadeIn();
+    $("html").css("overflow", "hidden");
+  }
+  function mbhide() {
+    mbBt.removeClass("active");
+    mbCon.removeClass("active");
+    mbWrap.hide();
+    $("html").css("overflow", "auto");
+  }
   mbBt.click(function () {
-    mbBt.toggleClass("active");
     if (mbBt.hasClass("active")) {
-      mbWrap.show();
-      $("html").css("overflow", "hidden");
-      mbCon.addClass("active");
+      mbhide();
     } else {
-      mbWrap.hide();
-      $("html").css("overflow", "auto");
-      mbCon.removeClass("active");
+      mbshow();
     }
   });
   mbWrap.click(function () {
-    mbWrap.hide();
-    mbBt.removeClass("active");
-    mbCon.removeClass("active");
-    $("html").css("overflow", "auto");
+    mbhide();
   });
   mbCon.click(function (e) {
     e.stopPropagation();
@@ -28,13 +32,14 @@ window.onload = function () {
   $(window).resize(function () {
     let temp = $(window).width();
     if (temp > 800) {
-      mbBt.removeClass("active");
-      mbWrap.hide();
+      mbhide();
     }
-  })
+  });
   // 섹션 액티브 관련
   const section = $("section");
   const sectionH = [];
+  const sectionBt = $(".section-bt");
+  const mbSectionBt = $(".mb-section-bt");
   $.each(section, function (index) {
     const windowH = Math.ceil($(this).offset().top - 70);
     sectionH[index] = windowH;
@@ -44,6 +49,8 @@ window.onload = function () {
         if (direction == "down") {
           sectionBt.removeClass("active");
           sectionBt.eq(index).addClass("active");
+          mbSectionBt.removeClass("active");
+          mbSectionBt.eq(index).addClass("active");
         }
       },
       offset: "30%",
@@ -54,13 +61,25 @@ window.onload = function () {
         if (direction == "up") {
           sectionBt.removeClass("active");
           sectionBt.eq(index).addClass("active");
+          mbSectionBt.removeClass("active");
+          mbSectionBt.eq(index).addClass("active");
         }
       },
       offset: "-70%",
     });
   });
-  const sectionBt = $(".section-bt");
+
   $.each(sectionBt, function (index) {
+    $(this).click(function (event) {
+      event.preventDefault();
+      scrollTo({
+        top: sectionH[index],
+        left: 0,
+        behavior: "smooth",
+      });
+    });
+  });
+  $.each(mbSectionBt, function (index) {
     $(this).click(function (event) {
       event.preventDefault();
       scrollTo({
