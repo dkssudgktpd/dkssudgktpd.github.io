@@ -641,12 +641,24 @@ section {
   margin-bottom: 50px;
 }
 .project-list > li {
-  display: block;
+  display: flex;
   font-size: 0;
   margin-bottom: 100px;
   box-shadow: 2px 1px 5px rgb(0 0 0 / 0);
   transition: box-shadow 0.5s;
   padding: 1%;
+}
+.project-list li:nth-child(odd) .project-title{
+  order: 1;
+}
+.project-list li:nth-child(odd) .project-img{
+  order: 2;
+}
+.project-list li:nth-child(even) .project-title{
+  order: 2;
+}
+.project-list li:nth-child(even) .project-img{
+  order: 1;
 }
 .project-list > li > .mb-title {
   display: none;
@@ -775,7 +787,7 @@ section {
   .project-list > li > .mb-title {
     width: 100%;
     display: block;
-    order: 1;
+    order: 1 !important;
     margin-top: 2.5vw;
   }
   .mb-title > span {
@@ -787,13 +799,13 @@ section {
   }
   .project-title {
     width: 100%;
-    order: 3;
+    order: 3 !important;
     margin-top: 5vw;
   }
   .project-list > li > .project-img {
     width: 100%;
     margin: 0 !important;
-    order: 2;
+    order: 2 !important;
   }
   .project-title p {
     margin-bottom: 5vw;
